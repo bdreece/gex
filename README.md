@@ -10,14 +10,14 @@ implementation discussed in ["Lexical Scanning in Go"] by
 ## Installation
 
 ```sh
-$ go get -u go.bdreece.dev/gex
+$ go get -u github.com/bdreece/gex
 ```
 
 ## Usage
 
 ```go
 import (
-    "go.bdreece.dev/gex"
+    "github.com/bdreece/gex"
 )
 ```
 
