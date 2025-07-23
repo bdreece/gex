@@ -12,8 +12,6 @@ $ go get -u go.bdreece.dev/gex
 
 ## Usage
 
-See full example at [examples/form-urlencoded](./examples/form-urlencoded):
-
 ```go
 import (
     "go.bdreece.dev/gex"
