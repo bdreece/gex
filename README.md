@@ -1,5 +1,8 @@
 # gex
 
+[![Github Actions Workflow Status](https://github.com/bdreece/gex/actions/workflows/build.yml/badge.svg)](https://github.com/bdreece/gex/actions/workflows/build.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/bdreece/gex.svg)](https://pkg.go.dev/github.com/bdreece/gex)
+
 A generic framework for lexical analysis of UTF-8 text in Go, based on the
 implementation discussed in ["Lexical Scanning in Go"] by
 [robpike].
