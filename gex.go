@@ -6,12 +6,11 @@
 // [robpike]: https://github.com/robpike
 package gex
 
-// Run creates a new [Lexer] with the provided input text and init state, then
-// launches a goroutine that advances the state machine before finally closing
-// the token stream.
+// Starts analyzing the input text with the provided init state in a new goroutine,
+// and returns a channel to receive the emitted [Token] objects.
 //
 // Additional options may be provided as variadic arguments.
-func Run[T any](input string, init State[T], opts ...Option[T]) <-chan Token[T] {
+func Start[T any](input string, init State[T], opts ...Option[T]) <-chan Token[T] {
 	config := DefaultConfig[T]()
 	config.Input = input
 	config.Init = init
@@ -19,14 +18,14 @@ func Run[T any](input string, init State[T], opts ...Option[T]) <-chan Token[T] 
 		opt.apply(config)
 	}
 
-	return RunWithConfig(config)
+	return StartWithConfig(config)
 }
 
-// RunWithConfig creates and starts the [Lexer] using parameters from the
-// provided [Config] object.
+// Starts analyzing the input text using parameters provided through the [Config]
+// object.
 //
-// See [Run] for more details.
-func RunWithConfig[T any](config *Config[T]) <-chan Token[T] {
+// See [Start] for more details.
+func StartWithConfig[T any](config *Config[T]) <-chan Token[T] {
 	lexer := Lexer[T]{
 		name:   config.Name,
 		input:  config.Input,

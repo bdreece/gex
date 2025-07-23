@@ -35,7 +35,7 @@ type (
 	// Implementors of this function contract can take advantage of utility
 	// functions provided through the [Lexer] object to emit tokens and
 	// direct iteration over the input text.
-	State[T any] func(l *Lexer[T]) State[T]
+	State[T any] func(l *Lexer[T]) (next State[T])
 )
 
 // String implements [fmt.Stringer]
